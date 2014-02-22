@@ -368,6 +368,13 @@ else
       cln.note "Add a package to dependencies", "put it build-depens in name.cabal, then\n$ cabal-dev install", "haskell", "hs"
       cln.note "Build the package",             "$ cabal-dev install", "haskell", "hs"
 
+    # mysql server mac
+    cln.note 'mysql: server start', 'mysql.server start'
+    cln.note 'mysql: server stop', 'mysql.server stop'
+    cln.note 'mysql: server status', 'mysql.server status'
+
+    cln.note 'postgresql: server run', 'postgres -D /usr/local/var/postgres'
+
     # git
     cln.note 'figure out which branches contain a commit',    'git branch -a --contains SHA', 'includes'
     cln.note '5 lines of context on a diff',                  'git diff -U5'
@@ -456,6 +463,27 @@ else
         $ make
         $ make install
       KISSES_AND_HUGS
+
+    cln.note 'debugger usge',      'gem debbuger; <% debugger %>; -> server console', 'rails', 'ruby'
+    cln.note 'debugger: next',     'next|n',                                          'rails', 'ruby'
+    cln.note 'debugger: continue', 'continue|c',                                      'rails', 'ruby'
+
+
+    cln.note 'rackup run',  'rackup -p 4567',            'rack', 'server'
+    cln.note 'shotgun run', 'shotgun -p 4567 config.ru', 'rack', 'server'
+
+    #heroku
+    cln.note 'heroku add remote to git', 'heroku git:remote -a hello-echo-endpoint', 'heroku', 'git'
+    cln.note 'push to heroku remote',    'git push heroku master',                   'heroku', 'git'
+
+    #vagran
+
+    cln.note '', 'vagrant up', 'vagrant'
+    cln.note '', 'vagrant ssh', 'vagrant'
+    cln.note '', 'vagrant destroy', 'vagrant'
+
+
+
 
 
     # homebrew
