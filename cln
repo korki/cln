@@ -400,6 +400,8 @@ else
     cln.note "log that says the parents",                     'git log --pretty=raw', 'revert', 'merge'
     cln.note "revert a merge commit",                         'git revert -m 1 HEAD'
 
+    cln.note "tag with comment: "                              "git tag -a 0.0.1 -m 'Version 0.0.1'", 'git', 'tag'
+    cln.note 'push tags to repo: '                             'git push origin --tags', 'git', 'push', 'tag'
     # github
     cln.note 'github will suppress trailing whitespace',        '?w=1 (add to the end of any diff url)'
     cln.note 'octocat index',                                   'http://octodex.github.com/', 'github'
@@ -468,19 +470,48 @@ else
     cln.note 'debugger: next',     'next|n',                                          'rails', 'ruby'
     cln.note 'debugger: continue', 'continue|c',                                      'rails', 'ruby'
 
-
     cln.note 'rackup run',  'rackup -p 4567',            'rack', 'server'
     cln.note 'shotgun run', 'shotgun -p 4567 config.ru', 'rack', 'server'
 
-    #heroku
+    # heroku
     cln.note 'heroku add remote to git', 'heroku git:remote -a hello-echo-endpoint', 'heroku', 'git'
     cln.note 'push to heroku remote',    'git push heroku master',                   'heroku', 'git'
 
-    #vagran
-
+    # vagrant
     cln.note '', 'vagrant up', 'vagrant'
     cln.note '', 'vagrant ssh', 'vagrant'
     cln.note '', 'vagrant destroy', 'vagrant'
+
+    # elasticsearch
+    cln.note 'run', 'elasticsearch --config=/usr/local/opt/elasticsearch/config/elasticsearch.yml', 'elasticsearch'
+    cln.note 'configuration' 'subl /usr/local/opt/elasticsearch/config/elasticsearch.yml', 'elasticsearch'
+    cln.note 'elasticsearch', <<-DESCRIPTION
+    To have launchd start elasticsearch at login:
+    ln -sfv /usr/local/opt/elasticsearch/*.plist ~/Library/LaunchAgents
+Then to load elasticsearch now:
+    launchctl load ~/Library/LaunchAgents/homebrew.mxcl.elasticsearch.plist
+Or, if you don't want/need launchctl, you can just run:
+    elasticsearch --config=/usr/local/opt/elasticsearch/config/elasticsearch.yml
+    DESCRIPTION
+
+    # runscope
+    cln.note 'runscope with bucket id and port tolisten to', 'runscope-passageway -b w19c68ap5xt3 9393', 'runscope', 'passageway', 'api', 'testing'
+
+    # curl
+    cln.note 'curl post with token', "curl -X POST -H Content-Type:application/json -H X_HUB_TOKEN:xxxx -d '{}' localhost:9292/ping -vi", 'curl', 'post'
+
+    # redis
+    cln.note 'redis', <<-DESCRIPTION
+    To have launchd start redis at login:
+    ln -sfv /usr/local/opt/redis/*.plist ~/Library/LaunchAgents
+Then to load redis now:
+    launchctl load ~/Library/LaunchAgents/homebrew.mxcl.redis.plist
+Or, if you don't want/need launchctl, you can just run:
+    redis-server /usr/local/etc/redis.conf
+    DESCRIPTION
+
+
+
 
 
 
