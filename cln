@@ -402,6 +402,10 @@ else
 
     cln.note "tag with comment: "                              "git tag -a 0.0.1 -m 'Version 0.0.1'", 'git', 'tag'
     cln.note 'push tags to repo: '                             'git push origin --tags', 'git', 'push', 'tag'
+    cln.note 'cleaning tags: ', <<-GIT
+      git tag -d 0.0.3; git push origin :refs/tags/0.0.3
+      on other remotes: git fetch origin --prune --tags
+    GIT
     # github
     cln.note 'github will suppress trailing whitespace',        '?w=1 (add to the end of any diff url)'
     cln.note 'octocat index',                                   'http://octodex.github.com/', 'github'
